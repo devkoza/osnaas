@@ -45,13 +45,13 @@ export default function ChatBlock() {
           </Button>
         </div>
         <div className="relative hidden h-40 w-64 md:block">
-          <Image
-            src="/images/questions.png"
+          {/* <Image
+            src=""
             alt="questions"
             fill
             sizes="(min-width: 320) 100vw, 100vw"
             className="h-full w-full object-contain"
-          />
+          /> */}
         </div>
       </div>
     </Section>

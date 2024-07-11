@@ -1,22 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import SignIn from '../auth/sign-in';
 import useAuth from '@/hooks/use-auth';
 import { Routes } from '@/config/routes';
 import ProfileMenu from '@/components/header/profile-menu';
 import { useModal } from '@/components/modals/context';
 import { useIsMounted } from '@/hooks/use-is-mounted';
 import Button from '@/components/ui/button';
-import SignUpForm from '../auth/signup-form';
+import router from 'next/router';
 
 
 const menuItems = [
-  // {
-  //   id: 1,
-  //   label: 'Home',
-  //   path: Routes.public.home,
-  // },
+
   {
     id: 1,
     label: 'Custom Packages',
@@ -38,9 +33,14 @@ export default function Menu() {
   const { openModal } = useModal();
   const { isAuthorized } = useAuth();
   const mounted = useIsMounted();
+  function handleClick() {
+    if (isAuthorized) {
+      router.push(Routes.auth.signIn);
+    } else {
+      openModal('SIGN_IN');
+    }
+  }
 
-  // Debug: Log menuItems to check for path issues
-  console.log('Menu Items:', menuItems);
 
   return (
     <nav className="primary-nav hidden items-center justify-between md:flex">

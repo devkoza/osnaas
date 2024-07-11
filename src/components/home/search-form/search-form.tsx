@@ -53,7 +53,6 @@ export default function FindTripForm() {
 
   return (
     <form
-      noValidate
       onSubmit={handleFormSubmit}
       className="relative z-[2] w-full max-w-[450px] rounded-lg bg-white p-6 shadow-2xl sm:m-0 sm:max-w-[380px] sm:p-7 sm:pt-9 md:max-w-[400px] md:shadow-none lg:rounded-xl xl:max-w-[460px] xl:p-9 4xl:max-w-[516px] 4xl:p-12"
     >
@@ -125,11 +124,11 @@ export default function FindTripForm() {
       
       <Button
         type="submit"
-        className="w-full !py-[14px] text-sm !font-bold uppercase leading-6 md:!py-[17px] md:text-base lg:!rounded-xl 3xl:!py-[22px]"
+        className="w-full !py-[14px] text-sm !font-bold titlecase leading-6 md:!py-[17px] md:text-base lg:!rounded-xl 3xl:!py-[22px]"
         rounded="lg"
         size="xl"
       >
-        Submit
+        Search
       </Button>
     </form>
   );

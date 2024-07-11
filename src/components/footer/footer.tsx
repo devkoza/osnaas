@@ -18,10 +18,7 @@ const menuItems = [
     label: 'Destinations',
     path: Routes.public.explore,
   },
-  {
-    label: "T&C's",
-    path: Routes.public.privacy,
-  },
+  
   {
     label: ' PrivacyPolicy',
     path: Routes.public.privacy,

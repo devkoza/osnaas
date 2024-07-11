@@ -2,12 +2,9 @@
 import clsx from 'clsx';
 import type { Metadata, Viewport } from 'next';
 import { Satisfy, Lato } from 'next/font/google';
-import ModalContainer from '@/components/modals/view';
-import DrawerContainer from '@/components/drawers/view';
-import GalleryCarouselView from '@/components/gallery/view';
 import 'react-datepicker/dist/react-datepicker.css';
 import '@/styles/globals.css';
-
+import { ClerkProvider, ClerkLoaded, ClerkLoading } from '@clerk/nextjs'
 
 const lato = Lato({
   subsets: ['latin'],
@@ -35,23 +32,21 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: React.PropsWithChildren<{}>) {
   return (
-    <html
-      lang="en"
-      className={clsx(
-        'h-full font-lato antialiased',
-        satisfy.variable,
-        lato.variable,
-      )}
+    <ClerkProvider
+    appearance={{
+      layout: {
+        socialButtonsPlacement: 'bottom',
+        socialButtonsVariant: 'iconButton',
+        termsPageUrl: 'https://clerk.com/terms'
+      }
+    }}
     >
-      <head />
-      <body className="flex min-h-full flex-col">
+      <html lang="en" className={clsx('h-full font-lato antialiased', satisfy.variable,lato.variable,)}>
+        <body className="flex min-h-full flex-col">
           {children}
-        <ModalContainer />
-        <DrawerContainer />
-        <GalleryCarouselView />
-        
-        
-      </body>
-    </html>
+          
+        </body>
+      </html>
+   </ClerkProvider>
   );
 }

@@ -25,6 +25,7 @@ export default function ListingDetails() {
           <DescriptionBlock description={vendorData.description} />
           <EquipmentBlock equipment={vendorData.equipment} />
           <SpecificationBlock specifications={vendorData.specifications} />
+          <ChatBlock/>
           <VendorBlock stats={reviewsData.stats} vendor={vendorData.vendor} />
 
         </div>

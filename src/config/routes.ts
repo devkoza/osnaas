@@ -9,7 +9,6 @@ export const Routes = {
     home: '/',
     payments: '/payments',
     about: '/about',
-    test: '/test',
     tours: '/tours',
     scuba: '/scuba',
     watersports: '/water-sports',
